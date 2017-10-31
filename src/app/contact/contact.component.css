@@ -1,0 +1,51 @@
+.contact {
+    background-color: #222;
+    background-image: url(/assets/images/map-image.png);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #f7f7f7;
+}
+
+h3 {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  color: #f9f9f9;
+}
+
+input {
+  width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 15px 0;
+  padding: 20px 0;
+  font-size: 1.3em;
+  border-color: #fff;
+  border: none;
+  border-left: 10px solid #fff;
+}
+
+input:focus {
+    outline: none !important;
+    box-shadow: 0 0 10px #f5a623;
+  }
+
+textarea {
+  font-size: 1.3em;
+  height: 234px;
+  width: 100%;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin: 15px 0;
+  padding: 20px 0;
+  border-color: #fff;
+  border: none;
+  border-left: 10px solid #fff;
+}
+
+button {
+  background: #f5a623;
+}

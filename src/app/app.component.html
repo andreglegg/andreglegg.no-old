@@ -1,20 +1,80 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-toolbar [class.navBg] = "navBgIsVisible" >
+  <button mat-button [class.navActive] = "navHomeIsActive" class="animated slideInLeft" scrollTo="home">Home</button>
+  <button mat-button [class.navActive] = "navWorkIsActive" class="animated slideInLeft" scrollTo="work" offset="106">Work</button>
+  <button mat-button [class.navActive] = "navAboutIsActive" class="animated slideInLeft" scrollTo="about" offset="100">About</button>
+  <button mat-button [class.navActive] = "navContactIsActive" class="animated slideInLeft" scrollTo="contact" offset="98">Contact</button>
+</mat-toolbar>
 
+<div class="intro">
+  <div class="intro-over  animated fadeIn">
+    <div class="intro-title animated fadeInUp">
+      <h1>André Glegg</h1>
+      <h2>Designer & Developer</h2>
+    </div>
+    <button mat-button class="btn-view-work animated tada" scrollTo="work" offset="100">View My Work</button>
+  </div>
+
+</div>
+
+<div class="work">
+  <div class="work-title">
+    <h2 id="work" >Work</h2>
+    <h3>My latest work</h3>
+    <div style="text-align:center">
+
+    </div>
+    <span id="filter-categories">
+    	<!-- <span class="filter-text">Filter:</span> -->
+      <div class="filter-align">
+        <input class="hidden radio-label" type="radio" name="filter" id="filter-all" checked />
+        <label class="filter-button-label" for="filter-all">
+        <h1>All</h1>
+        </label>
+      </div>
+      <input class="hidden radio-label" type="radio" name="filter" id="app" />
+      <label class="filter-button-label" for="app">
+      <h1>App</h1>
+      </label>
+
+      <input class="hidden radio-label" type="radio" name="filter" id="web" />
+      <label class="filter-button-label" for="web">
+      <h1>Web</h1>
+      </label>
+
+    </span>
+    <span style="display:block; clear:both;"> </span>
+    <div class="filter-wrap">
+    	<div class="filter-item pf-item {{ portfolioItem.type }}" *ngFor="let portfolioItem of portfolioItems; let i = 'index'">
+        <div class="filter-item-wrap" (click)="openDialog({name: portfolioItem.name, tags: portfolioItem.tags, image: portfolioItem.image, link: portfolioItem.link, desc: portfolioItem.desc})">
+        <div class="filter-item-hover animated slideInUp" >
+
+          <div class="hover-content">
+            <mat-icon class="launch-icon">
+              aspect_ratio
+            </mat-icon>
+          </div>
+
+        </div>
+        <img src="{{ portfolioItem.thumb }}">
+        </div>
+
+        <div class="filter-item-info">
+          <h4>{{ portfolioItem.name }}</h4>
+          <p>{{ portfolioItem.tags }}</p>
+        </div>
+      </div>
+
+    	<div id="filter-mask"></div> <!-- mask is last -->
+    </div>
+
+
+
+
+  </div>
+</div>
+
+<app-about></app-about>
+
+<app-contact></app-contact>
+
+<app-footer></app-footer>

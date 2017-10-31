@@ -1,0 +1,27 @@
+<div class="contact">
+  <div class=" container contact-title">
+    <h2 id="contact">Contact</h2>
+    <h3>I would love to chat, send me an email!</h3>
+    <form class="" enctype="text/plain" action="mailto:andreglegg@me.com" method="GET">
+          <div class="row">
+      <div class="col-6">
+        <!-- This content will take up 3/12 (or 1/4) of the container -->
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <input type="tel" id="phone" placeholder="Your Phone">
+
+      </div>
+      <div class="col-6">
+        <!-- This content will take up 6/12 (or 1/2) of the container -->
+        <textarea id="body" placeholder="Your Message"></textarea>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+
+        <button mat-button type="submit" (click)="onContactButton()">SEND MESSAGE</button>
+      </div>
+    </div>
+  </form>
+  </div>
+</div>
